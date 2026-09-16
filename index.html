@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Как я провел лето ☀️🌸</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Manrope:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  /* ============================================================
+     БАЗА
+     ============================================================ */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root{
+    --pink:   #ffd6e8;
+    --peach:  #ffe8d6;
+    --lilac:  #e6d9ff;
+    --mint:   #d9f5e8;
+    --butter: #fff4c2;
+    --ink:    #4a3b52;
+    --ink-soft:#7a6a83;
+    --white:  #fffdfb;
+    --radius: 28px;
+    --shadow: 0 18px 45px -18px rgba(180, 130, 190, .45);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body{
+    font-family: 'Manrope', system-ui, sans-serif;
+    color: var(--ink);
+    background: var(--white);
+    line-height: 1.65;
+    overflow-x: hidden;
+  }
+
+  .wrap{ width: min(1080px, 92vw); margin-inline: auto; }
+
+  /* ============================================================
+     ЖИВОЙ ФОН
+     ============================================================ */
+  .bg-aura{
+    position: fixed;
+    inset: -20%;
+    z-index: -2;
+    background:
+      radial-gradient(40% 40% at 15% 20%, var(--pink)   0%, transparent 60%),
+      radial-gradient(45% 45% at 85% 15%, var(--lilac)  0%, transparent 60%),
+      radial-gradient(50% 50% at 75% 85%, var(--peach)  0%, transparent 60%),
+      radial-gradient(45% 45% at 20% 85%, var(--mint)   0%, transparent 60%),
+      radial-gradient(35% 35% at 50% 50%, var(--butter) 0%, transparent 70%),
+      var(--white);
+    filter: blur(40px) saturate(115%);
+    animation: float 22s ease-in-out infinite alternate;
+  }
+  @keyframes float{
+    0%   { transform: translate3d(0,0,0) scale(1); }
+    50%  { transform: translate3d(-2%, 2%, 0) scale(1.06); }
+    100% { transform: translate3d(2%, -1%, 0) scale(1.02); }
+  }
+
+  .petal{
+    position: fixed;
+    top: -8vh;
+    z-index: -1;
+    font-size: 1.6rem;
+    opacity: .55;
+    pointer-events: none;
+    animation: fall linear infinite;
+    will-change: transform;
+  }
+  @keyframes fall{
+    0%   { transform: translateY(-10vh) translateX(0)    rotate(0deg);   opacity: 0; }
+    10%  { opacity: .6; }
+    50%  { transform: translateY(50vh)  translateX(40px) rotate(180deg); }
+    90%  { opacity: .5; }
+    100% { transform: translateY(110vh) translateX(-30px) rotate(360deg); opacity: 0; }
+  }
+
+  /* ============================================================
+     ОБЩИЕ ТИПОГРАФИЧЕСКИЕ ЭЛЕМЕНТЫ
+     ============================================================ */
+  .badge{
+    display: inline-block;
+    font-size: .78rem;
+    letter-spacing: .28em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--ink-soft);
+    background: rgba(255,255,255,.65);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,.9);
+    padding: 10px 22px;
+    border-radius: 999px;
+    box-shadow: 0 8px 24px -12px rgba(180,130,190,.5);
+    margin-bottom: 28px;
+    animation: fadeUp .9s .1s both;
+  }
+
+  .section-title{
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.9rem, 5vw, 3rem);
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 14px;
+  }
+  .section-note{
+    text-align: center;
+    color: var(--ink-soft);
+    font-weight: 300;
+    max-width: 52ch;
+    margin: 0 auto 52px;
+  }
+
+  @keyframes fadeUp{
+    from{ opacity:0; transform: translateY(28px); }
+    to  { opacity:1; transform: translateY(0); }
+  }
+  @keyframes fade{
+    from{ opacity:0 }
+    to  { opacity:1 }
+  }
+
+  /* ============================================================
+     ЭКРАНЫ (SPA)
+     ============================================================ */
+  .screen{ display: none; }
+  .screen.active{ display: block; animation: fade .4s both; }
+
+  /* ============================================================
+     ГЛАВНАЯ: ШАПКА
+     ============================================================ */
+  header.hero-main{
+    min-height: 92vh;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    padding: 80px 0 60px;
+    position: relative;
+  }
+
+  h1.title-main{
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: clamp(2.8rem, 9vw, 6.4rem);
+    line-height: 1.02;
+    letter-spacing: -.01em;
+    background: linear-gradient(100deg, #e58fb5, #b98fe0 40%, #7fc4a8 75%, #e9b06c);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: fadeUp 1s .25s both;
+  }
+  h1.title-main em{ font-style: italic; font-weight: 400; display: block; }
+
+  .subtitle{
+    margin-top: 26px;
+    font-size: clamp(1rem, 2.2vw, 1.2rem);
+    color: var(--ink-soft);
+    font-weight: 300;
+    max-width: 46ch;
+    margin-inline: auto;
+    animation: fadeUp 1s .45s both;
+  }
+
+  .scroll-hint{
+    margin-top: 54px;
+    font-size: .8rem;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    animation: bounce 2.4s ease-in-out infinite, fadeUp 1s .7s both;
+  }
+  @keyframes bounce{ 0%,100%{transform:translateY(0)} 50%{transform:translateY(9px)} }
+
+  section.block{ padding: 70px 0; }
+
+  /* ============================================================
+     ВСТУПЛЕНИЕ (ФОТО + ТЕКСТ)
+     ============================================================ */
+  .intro{
+    display: grid;
+    grid-template-columns: 1fr 1.15fr;
+    gap: clamp(28px, 5vw, 70px);
+    align-items: center;
+  }
+
+  .photo-frame{
+    position: relative;
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    aspect-ratio: 4 / 5;
+    background: linear-gradient(140deg, var(--pink), var(--lilac), var(--mint));
+    transform: rotate(-2deg);
+    transition: transform .6s cubic-bezier(.2,.8,.2,1);
+  }
+  .photo-frame:hover{ transform: rotate(0deg) scale(1.02); }
+
+  .photo-frame img{ width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  .photo-frame .placeholder{
+    position: absolute; inset: 0;
+    display: grid; place-items: center;
+    text-align: center;
+    font-size: .95rem;
+    color: #8a6d92;
+    padding: 24px;
+  }
+
+  .photo-frame::after{
+    content: "🌸";
+    position: absolute;
+    top: 14px; right: 16px;
+    font-size: 1.4rem;
+    filter: drop-shadow(0 4px 10px rgba(0,0,0,.15));
+  }
+
+  .intro-text p + p{ margin-top: 18px; }
+  .intro-text p{ font-weight: 300; color: #5c4d64; }
+  .intro-text strong{ font-weight: 600; color: var(--ink); }
+
+  /* ============================================================
+     КАРТОЧКИ-КНОПКИ
+     ============================================================ */
+  .cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 26px;
+  }
+
+  .card{
+    display: block;
+    text-align: left;
+    font-family: inherit;
+    font-size: 1rem;
+    text-decoration: none;
+    color: inherit;
+    background: rgba(255,255,255,.6);
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(255,255,255,.9);
+    border-radius: var(--radius);
+    padding: 34px 30px 32px;
+    box-shadow: var(--shadow);
+    position: relative;
+    overflow: hidden;
+    transition: transform .45s cubic-bezier(.2,.8,.2,1), box-shadow .45s;
+    cursor: pointer;
+    width: 100%;
+  }
+
+  .card::before{
+    content: "";
+    position: absolute; inset: 0;
+    background: linear-gradient(160deg, var(--tint, var(--pink)), transparent 65%);
+    opacity: .55;
+    z-index: -1;
+  }
+
+  .card-icon{ font-size: 2.2rem; display: block; margin-bottom: 16px; }
+
+  .card h3{
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+
+  .card .place{
+    font-size: .8rem;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    font-weight: 600;
+    margin-bottom: 18px;
+  }
+
+  .card p{ font-weight: 300; color: #5c4d64; }
+
+  .tags{ display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+  .tags span{
+    font-size: .75rem;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 999px;
+    background: rgba(255,255,255,.85);
+    border: 1px solid rgba(255,255,255,1);
+    color: var(--ink-soft);
+  }
+
+  .card-cta{
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 24px;
+    font-size: .85rem;
+    font-weight: 700;
+    letter-spacing: .04em;
+    color: var(--ink);
+  }
+  .card-cta .arrow{ transition: transform .4s cubic-bezier(.2,.8,.2,1); }
+  .card:hover .card-cta .arrow{ transform: translateX(6px); }
+
+  /* ============================================================
+     ЦИТАТА
+     ============================================================ */
+  .quote{ text-align: center; padding: 80px 0; }
+  .quote blockquote{
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    line-height: 1.35;
+    color: #6b5a74;
+    max-width: 22ch;
+    margin-inline: auto;
+    position: relative;
+  }
+  .quote blockquote::before,
+  .quote blockquote::after{
+    content: "❀";
+    font-style: normal;
+    font-size: .5em;
+    color: #e58fb5;
+    display: block;
+    margin: 18px auto;
+  }
+
+  /* ============================================================
+     ПОДВАЛ
+     ============================================================ */
+  footer{
+    text-align: center;
+    padding: 60px 0 70px;
+    color: var(--ink-soft);
+    font-size: .85rem;
+    font-weight: 300;
+  }
+  footer .hearts{ font-size: 1.2rem; letter-spacing: .4em; margin-bottom: 14px; }
+
+  /* ============================================================
+     ВНУТРЕННИЕ СТРАНИЦЫ
+     ============================================================ */
+  .topbar{
+    position: sticky; top: 0; z-index: 20;
+    backdrop-filter: blur(14px);
+    background: rgba(255,255,255,.55);
+    border-bottom: 1px solid rgba(255,255,255,.8);
+  }
+  .topbar-inner{
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 14px 0;
+  }
+  .back{
+    display: inline-flex; align-items: center; gap: 8px;
+    text-decoration: none; color: var(--ink);
+    font-family: inherit;
+    font-weight: 600; font-size: .9rem;
+    padding: 9px 18px; border-radius: 999px;
+    background: rgba(255,255,255,.75);
+    border: 1px solid rgba(255,255,255,1);
+    transition: transform .3s, box-shadow .3s;
+    cursor: pointer;
+  }
+  .back:hover{  box-shadow: 0 8px 22px -10px rgba(180,130,190,.6); }
+  .crumb{ font-size: .82rem; letter-spacing: .18em; text-transform: uppercase; color: var(--ink-soft); font-weight: 600; }
+
+  .hero-inner{
+    text-align: center;
+    padding: 70px 0 50px;
+  }
+  .hero-inner .badge{ margin-bottom: 26px; }
+  .hero-inner h2{
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: clamp(2.4rem, 8vw, 5rem);
+    line-height: 1.05;
+    animation: fadeUp 1s .25s both;
+  }
+  .hero-inner h2.pink-grad{
+    background: linear-gradient(100deg, #e58fb5, #b98fe0 55%, #e9b06c);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .hero-inner h2.mint-grad{
+    background: linear-gradient(100deg, #7fc4a8, #b98fe0 55%, #e58fb5);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .hero-inner p{
+    margin-top: 20px; color: var(--ink-soft); font-weight: 300;
+    max-width: 54ch; margin-inline: auto;
+    animation: fadeUp 1s .4s both;
+  }
+
+  .about-card{
+    background: rgba(255,255,255,.6);
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(255,255,255,.9);
+    border-radius: var(--radius);
+    padding: 40px clamp(24px, 4vw, 48px);
+    box-shadow: var(--shadow);
+  }
+  .about-card h3{
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.7rem, 4.5vw, 2.6rem);
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+  .about-card p + p{ margin-top: 16px; }
+  .about-card p{ font-weight: 300; color: #5c4d64; }
+  .about-card strong{ font-weight: 600; color: var(--ink); }
+
+  .facts{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 16px;
+    margin-top: 30px;
+  }
+  .fact{
+    background: rgba(255,255,255,.75);
+    border: 1px solid rgba(255,255,255,1);
+    border-radius: 20px;
+    padding: 18px 20px;
+  }
+  .fact .label{
+    font-size: .72rem; letter-spacing: .16em; text-transform: uppercase;
+    color: var(--ink-soft); font-weight: 700; margin-bottom: 6px;
+  }
+  .fact .value{ font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 600; }
+
+  /* ============================================================
+     ГАЛЕРЕЯ
+     ============================================================ */
+  .gallery{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 18px;
+  }
+  .shot{
+    position: relative;
+    border-radius: 22px;
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+    background: linear-gradient(140deg, var(--pink), var(--lilac), var(--peach));
+    box-shadow: var(--shadow);
+    transition: transform .5s cubic-bezier(.2,.8,.2,1), box-shadow .5s;
+    cursor: pointer;
+  }
+  .shot.mint{ background: linear-gradient(140deg, var(--mint), var(--lilac), var(--pink)); }
+
+
+  .shot img{ width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .7s cubic-bezier(.2,.8,.2,1); }
+  .shot:hover img{ transform: scale(1.07); }
+
+  .shot .ph{
+    position: absolute; inset: 0;
+    display: grid; place-items: center; text-align: center;
+    font-size: .85rem; color: #8a6d92; padding: 18px;
+  }
+  .shot .cap{
+    position: absolute; left: 0; right: 0; bottom: 0;
+    padding: 26px 16px 14px;
+    font-size: .82rem; font-weight: 600; color: #fff;
+    background: linear-gradient(to top, rgba(74,59,82,.75), transparent);
+    opacity: 0; transform: translateY(8px);
+    transition: opacity .4s, transform .4s;
+  }
+  .shot:hover .cap{ opacity: 1; transform: translateY(0); }
+
+  /* ============================================================
+     НАВИГАЦИЯ МЕЖДУ ГЛАВАМИ
+     ============================================================ */
+  .next-link{
+    display: flex; justify-content: space-between; align-items: center;
+    gap: 18px; flex-wrap: wrap;
+    margin-top: 30px;
+  }
+  .btn{
+    display: inline-flex; align-items: center; gap: 10px;
+    text-decoration: none; color: var(--ink);
+    font-family: inherit;
+    font-weight: 700; font-size: .92rem;
+    padding: 14px 26px; border-radius: 999px;
+    background: rgba(255,255,255,.8);
+    border: 1px solid rgba(255,255,255,1);
+    box-shadow: var(--shadow);
+    transition: transform .3s, box-shadow .3s;
+    cursor: pointer;
+  }
+
+
+  /* ============================================================
+     ЛАЙТБОКС
+     ============================================================ */
+  .lightbox{
+    position: fixed; inset: 0; z-index: 100;
+    display: none; place-items: center;
+    background: rgba(74,59,82,.72);
+    backdrop-filter: blur(10px);
+    padding: 5vw;
+  }
+  .lightbox.open{ display: grid; animation: fade .3s both; }
+  .lightbox img{
+    max-width: 100%; max-height: 82vh;
+    border-radius: 24px;
+    box-shadow: 0 40px 80px -30px rgba(0,0,0,.6);
+    animation: pop .4s cubic-bezier(.2,.8,.2,1) both;
+  }
+  @keyframes pop{ from{ transform: scale(.94); opacity:0 } to{ transform: scale(1); opacity:1 } }
+  .lightbox .close{
+    position: absolute; top: 24px; right: 28px;
+    width: 46px; height: 46px; border-radius: 50%;
+    border: none; cursor: pointer;
+    background: rgba(255,255,255,.85); color: var(--ink);
+    font-size: 1.4rem; line-height: 1;
+    display: grid; place-items: center;
+    transition: transform .3s;
+  }
+  .lightbox .close:hover{ transform: rotate(90deg) scale(1.08); }
+
+  /* ============================================================
+     АДАПТИВ
+     ============================================================ */
+  @media (max-width: 760px){
+    .intro{ grid-template-columns: 1fr; }
+    .photo-frame{ transform: none; max-width: 420px; margin-inline: auto; }
+    header.hero-main{ min-height: auto; padding: 70px 0 40px; }
+    section.block{ padding: 50px 0; }
+    .hero-inner{ padding: 50px 0 30px; }
+    .crumb{ display: none; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *, *::before, *::after{
+      animation-duration: .01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: .01ms !important;
+    }
+  }
+
+
+  /* ---- 1. Переменные Bootstrap под нашу палитру ---- */
+  :root{
+    --bs-primary:        #b98fe0;
+    --bs-primary-rgb:    185, 143, 224;
+    --bs-secondary:      #e58fb5;
+    --bs-secondary-rgb:  229, 143, 181;
+    --bs-success:        #7fc4a8;
+    --bs-success-rgb:    127, 196, 168;
+    --bs-body-font-family: 'Manrope', system-ui, sans-serif;
+    --bs-body-color:     #4a3b52;
+    --bs-body-bg:        transparent;
+    --bs-border-radius:  28px;
+    --bs-border-radius-lg: 28px;
+    --bs-border-radius-sm: 999px;
+  }
+
+  /* ---- 2. Bootstrap container согласован с .wrap ---- */
+  .container,
+  .container-fluid{
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 1.5rem;
+  }
+
+  /* ---- 3. Кнопки Bootstrap в стиле сайта ---- */
+  .btn{
+    font-family: 'Manrope', system-ui, sans-serif;
+    border-radius: 999px;
+    font-weight: 700;
+    transition: transform .3s, box-shadow .3s, background .3s, color .3s;
+  }
+  .btn:hover{ transform: translateY(-3px); }
+
+  .btn-primary{
+    --bs-btn-bg: #b98fe0;
+    --bs-btn-border-color: #b98fe0;
+    --bs-btn-hover-bg: #a97ad6;
+    --bs-btn-hover-border-color: #a97ad6;
+    --bs-btn-active-bg: #9b68cf;
+    --bs-btn-active-border-color: #9b68cf;
+    --bs-btn-color: #fff;
+    --bs-btn-hover-color: #fff;
+    box-shadow: var(--shadow);
+  }
+
+  .btn-secondary{
+    --bs-btn-bg: #e58fb5;
+    --bs-btn-border-color: #e58fb5;
+    --bs-btn-hover-bg: #dc7ea7;
+    --bs-btn-hover-border-color: #dc7ea7;
+    --bs-btn-active-bg: #d26d99;
+    --bs-btn-active-border-color: #d26d99;
+    --bs-btn-color: #fff;
+    --bs-btn-hover-color: #fff;
+    box-shadow: var(--shadow);
+  }
+
+  .btn-success{
+    --bs-btn-bg: #7fc4a8;
+    --bs-btn-border-color: #7fc4a8;
+    --bs-btn-hover-bg: #6bb597;
+    --bs-btn-hover-border-color: #6bb597;
+    --bs-btn-color: #fff;
+    --bs-btn-hover-color: #fff;
+    box-shadow: var(--shadow);
+  }
+
+  .btn-outline-dark{
+    --bs-btn-color: #4a3b52;
+    --bs-btn-border-color: rgba(255,255,255,1);
+    --bs-btn-bg: rgba(255,255,255,.75);
+    --bs-btn-hover-bg: #4a3b52;
+    --bs-btn-hover-border-color: #4a3b52;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-active-bg: #4a3b52;
+    --bs-btn-active-border-color: #4a3b52;
+    --bs-btn-active-color: #fff;
+    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow);
+  }
+
+  .btn-dark{
+    --bs-btn-bg: #4a3b52;
+    --bs-btn-border-color: #4a3b52;
+    --bs-btn-hover-bg: #3a2d42;
+    --bs-btn-hover-border-color: #3a2d42;
+    --bs-btn-color: #fff;
+    --bs-btn-hover-color: #fff;
+    box-shadow: var(--shadow);
+  }
+
+  /* ---- 4. Bootstrap card в стиле сайта (стекло) ---- */
+  .card{
+    --bs-card-bg: rgba(255,255,255,.6);
+    --bs-card-border-color: rgba(255,255,255,.9);
+    --bs-card-border-radius: var(--radius);
+    --bs-card-inner-border-radius: var(--radius);
+    --bs-card-color: var(--ink);
+    backdrop-filter: blur(14px);
+    box-shadow: var(--shadow);
+    border-width: 1px;
+  }
+  .card-body{ padding: 34px 30px 32px; }
+  .card-title{
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 1.75rem;
+  }
+  .card-text{ font-weight: 300; color: #5c4d64; }
+
+  /* ---- 5. Bootstrap badge в стиле сайта ---- */
+  .badge{
+    font-family: 'Manrope', system-ui, sans-serif;
+    font-weight: 600;
+    letter-spacing: .28em;
+    text-transform: uppercase;
+  }
+
+  /* ---- 6. Bootstrap navbar в стиле сайта ---- */
+  .navbar{
+    --bs-navbar-padding-y: 0;
+    --bs-navbar-color: var(--ink);
+    --bs-navbar-hover-color: var(--ink);
+    --bs-navbar-active-color: var(--ink);
+    backdrop-filter: blur(14px);
+    background: rgba(255,255,255,.55) !important;
+    border-bottom: 1px solid rgba(255,255,255,.8);
+  }
+  .navbar-text{ color: var(--ink-soft); }
+
+  /* ---- 7. Bootstrap img-fluid согласован с .photo-frame ---- */
+  .img-fluid{
+    max-width: 100%;
+    height: auto;
+  }
+  .photo-frame .img-fluid,
+  .shot .img-fluid{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* ---- 8. Утилиты Bootstrap: подгоняем под палитру ---- */
+  .text-muted{ color: var(--ink-soft) !important; }
+  .bg-white{ background-color: rgba(255,255,255,.75) !important; }
+  .bg-opacity-75{ --bs-bg-opacity: .75; }
+  .rounded-pill{ border-radius: 999px !important; }
+  .shadow-sm{ box-shadow: var(--shadow) !important; }
+
+  /* ---- 9. Сетка Bootstrap: страховка на мобильных ---- */
+  @media (max-width: 760px){
+    .row{ --bs-gutter-x: 1rem; }
+    .col-6{ flex: 0 0 auto; width: 50%; }
+  }
+
+  /* ---- 10. Bootstrap Icons: цвет под палитру ---- */
+  .bi{ color: inherit; }
+</style>
+</head>
+<body>
+
+<!-- ============ ЖИВОЙ ФОН И ЛЕПЕСТКИ ============ -->
+<div class="bg-aura"></div>
+<div class="petal" style="left:6%;  animation-duration:16s; animation-delay:0s;">🌸</div>
+<div class="petal" style="left:22%; animation-duration:21s; animation-delay:3s;">🌷</div>
+<div class="petal" style="left:38%; animation-duration:18s; animation-delay:6s;">🌼</div>
+<div class="petal" style="left:55%; animation-duration:24s; animation-delay:1.5s;">🌸</div>
+<div class="petal" style="left:71%; animation-duration:19s; animation-delay:8s;">💮</div>
+<div class="petal" style="left:88%; animation-duration:22s; animation-delay:4.5s;">🌺</div>
+
+
+<!-- ============================================================
+     ЭКРАН 1: ГЛАВНАЯ
+     ============================================================ -->
+<div class="screen active" id="screen-home">
+
+  <header class="hero-main">
+    <div class="wrap">
+      <span class="badge">Лето 2026 · My life</span>
+      <h1 class="title-main">Как я провела свое<em>лето</em></h1>
+      <p class="subtitle">
+        Две половины одного лета: шумный лагерь «Горизонт» и тихий санаторий-профилакторий «Политехник» БНТУ.
+      </p>
+      <p class="scroll-hint">листай вниз ↓</p>
+    </div>
+  </header>
+
+  <section class="block" id="about">
+    <div class="wrap intro">
+
+      <div class="photo-frame">
+        <img src="Мое фото.jpg" alt="Моё летнее фото" onerror="this.style.display='none';">
+
+      </div>
+
+      <div class="intro-text">
+        <h2 class="section-title" style="text-align:left; margin-bottom:24px;">Моё лето в двух главах</h2>
+        <p>
+          Это лето получилось необычным: оно будто состояло из двух совершенно разных миров.
+          <strong>Первая половина</strong> прошла в роли вожатой в лагере <strong>«Горизонт»</strong> —
+          там были отрядные мероприятия, утренние линейки, квесты, костры и бесконечная энергия детей.
+        </p>
+        <p>
+          <strong>Вторая половина</strong> — санаторий-профилакторий <strong>«Политехник»</strong> от БНТУ:
+          размеренный ритм, процедуры, прогулки по аллеям, тишина и время подумать о себе.
+        </p>
+        <p>
+          Так что моё лето — это баланс между шумом и покоем, между «дети, в столовую!» и «я спать».
+          И знаете, обе части были по-своему идеальны. 
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="block" id="chapters">
+    <div class="wrap">
+      <h2 class="section-title">Две главы одного лета</h2>
+      <p class="section-note">Нажми на карточку, чтобы увидеть больше ярких моментов ʕ •̀ o •́ ʔ</p>
+
+      <div class="cards">
+
+        <button class="card" style="--tint: var(--pink);" onclick="goTo('gorizont')">
+          <span class="card-icon">🏕️</span>
+          <h3>Лагерь «Горизонт»</h3>
+          <p class="place">Первая половина лета · Радошковичи</p>
+          <p>
+            Я был вожатым: будил отряд на зарядку, придумывал игры, вёл конкурсы и вечерние «огоньки».
+            Научился держать внимание тридцати детей одновременно и не терять улыбку к концу дня.
+          </p>
+          <div class="tags">
+            <span>вожатый</span>
+            <span>отряд</span>
+            <span>костры</span>
+            <span>квесты</span>
+          </div>
+          <span class="card-cta">Открыть страницу <span class="arrow">→</span></span>
+        </button>
+
+        <button class="card" style="--tint: var(--mint);" onclick="goTo('politehnik')">
+          <span class="card-icon">🌿</span>
+          <h3>«Политехник» БНТУ</h3>
+          <p class="place">Вторая половина лета · берег Заславского водохранилища</p>
+          <p>
+            Тихий ритм, процедуры, прогулки по аллеям и много времени наедине с собой.
+            Место, где лето наконец замедлилось и дало возможность выдохнуть после лагерной суеты.
+          </p>
+          <div class="tags">
+            <span>отдых</span>
+            <span>процедуры</span>
+            <span>прогулки</span>
+            <span>тишина</span>
+          </div>
+          <span class="card-cta">Открыть страницу <span class="arrow">→</span></span>
+        </button>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="quote">
+    <div class="wrap">
+      <blockquote>
+        Лето — это когда ты успеваешь побыть и нужным, и свободным.
+      </blockquote>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <div class="hearts">🌸 🌷 🌼</div>
+      <p>Лабораторная работа №1 · Настройка среды разработки</p>
+      <p>Веб-сайт «Как я провел лето» · 2026</p>
+    </div>
+  </footer>
+
+</div>
+
+
+<!-- ============================================================
+     ЭКРАН 2: ЛАГЕРЬ «ГОРИЗОНТ»
+     ============================================================ -->
+<div class="screen" id="screen-gorizont">
+
+  <div class="topbar">
+    <div class="wrap topbar-inner">
+      <button class="back" onclick="goTo('home')">← На главную</button>
+      <span class="crumb">Глава 1 · Лагерь</span>
+    </div>
+  </div>
+
+  <header class="hero-inner">
+    <div class="wrap">
+      <span class="badge">Первая половина лета</span>
+      <h2 class="pink-grad">Лагерь «Горизонт»</h2>
+      <p>Лес · отряд, костры и бесконечная энергия детей.  Место, где я научилась быть нужным.</p>
+    </div>
+  </header
+
+  <section class="block">
+    <div class="wrap">
+      <div class="about-card">
+        <h3>Немного об этом месте</h3>
+        <p>
+          <strong>«Горизонт»</strong> — детский оздоровительный лагерь в Беларуси, окружённый лесом и тишиной.
+          Первая половина моего лета прошла именно здесь, в роли <strong>вожатого</strong>.
+        </p>
+        <p>
+          День начинался с зарядки и линейки, продолжался играми, квестами и творческими мастерскими,
+          а заканчивался вечерним «огоньком» у костра. Я отвечала за отряд: следила за расписанием,
+          придумывала активности, поддерживала детей и решала мелкие конфликты.
+        </p>
+        <p>
+          Это было по-настоящему громко, тепло и волнительно. Здесь я поняла, что уметь вести за собой —
+          это не про громкий голос, а про внимание к каждому. И да, я впервые за долгое время чуть не сошла с ума. 
+        </p>
+
+        <div class="facts">
+          <div class="fact"><div class="label">Роль</div><div class="value">Вожатый</div></div>
+          <div class="fact"><div class="label">Когда</div><div class="value">Июль</div></div>
+          <div class="fact"><div class="label">Место</div><div class="value">Радошковичи</div></div>
+          <div class="fact"><div class="label">Главное</div><div class="value">Лубимый 10 отряд</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="wrap">
+      <h2 class="section-title">Галерея</h2>
+      <p class="section-note">Мои фотографии из лагеря «Горизонт»</p>
+
+      <div class="gallery">
+        <figure class="shot" onclick="openLb(this)">
+          <img src="вожатые.jpg" alt="Горизонт 1" onerror="this.style.display='none';">
+
+        </figure>
+        <figure class="shot" onclick="openLb(this)">
+          <img src="дети 1.jpg" alt="Горизонт 2" onerror="this.style.display='none';">
+
+        </figure>
+        <figure class="shot" onclick="openLb(this)">
+          <img src="диско.jpg" alt="Горизонт 3" onerror="this.style.display='none';">
+
+        </figure>
+        <figure class="shot" onclick="openLb(this)">
+          <img src="дети 2.jpg" alt="Горизонт 4" onerror="this.style.display='none';">
+
+        </figure>
+      </div>
+
+      <div class="next-link">
+        <button class="btn" onclick="goTo('home')">← Вернуться на главную</button>
+        <button class="btn" onclick="goTo('politehnik')">Следующая глава: «Политехник» →</button>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <div class="hearts">🌸 🌷 🌼</div>
+      <p>Лабораторная работа №1 · «Как я провел лето» · 2026</p>
+    </div>
+  </footer>
+
+</div>
+
+
+<!-- ============================================================
+     ЭКРАН 3: САНАТОРИЙ «ПОЛИТЕХНИК»
+     ============================================================ -->
+<div class="screen" id="screen-politehnik">
+
+  <div class="topbar">
+    <div class="wrap topbar-inner">
+      <button class="back" onclick="goTo('home')">← На главную</button>
+      <span class="crumb">Глава 2 · Санаторий</span>
+    </div>
+  </div>
+
+  <header class="hero-inner">
+    <div class="wrap">
+      <span class="badge">Вторая половина лета</span>
+      <h2 class="mint-grad">Санаторий «Политехник»</h2>
+      <p>БНТУ · процедуры, прогулки по аллеям и тишина, в которой наконец можно было выдохнуть.</p>
+    </div>
+  </header>
+
+  <section class="block">
+    <div class="wrap">
+      <div class="about-card">
+        <h3>Немного об этом месте</h3>
+        <p>
+          <strong>Санаторий-профилакторий «Политехник»</strong> — это оздоровительный комплекс
+          Белорусского национального технического университета (БНТУ). Вторая половина моего лета
+          прошла именно здесь.
+        </p>
+        <p>
+          После шумного лагеря «Горизонт» этот ритм показался почти медитативным: подъём, процедуры,
+          лёгкие прогулки по аллеям, чтение на скамейке, тихие вечера. Здесь было время подумать,
+          восстановиться и просто побыть наедине с собой.
+        </p>
+        <p>
+          Если лагерь научил меня быть нужным другим, то «Политехник» — быть нужным себе.
+          Идеальный финал лета: тихий, тёплый и очень спокойный. 
+        </p>
+
+        <div class="facts">
+          <div class="fact"><div class="label">Организация</div><div class="value">БНТУ</div></div>
+          <div class="fact"><div class="label">Когда</div><div class="value">Август</div></div>
+          <div class="fact"><div class="label">Формат</div><div class="value">Санаторий</div></div>
+          <div class="fact"><div class="label">Главное</div><div class="value">Тишина и покой</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="wrap">
+      <h2 class="section-title">Галерея</h2>
+      <p class="section-note">Мои фотографии из «Политехника»</p>
+
+      <div class="gallery">
+        <figure class="shot mint" onclick="openLb(this)">
+          <img src="поли 1.jpg" alt="Политехник 1" onerror="this.style.display='none';">
+         
+        </figure>
+        <figure class="shot mint" onclick="openLb(this)">
+          <img src="поли 2.jpg" alt="Политехник 2" onerror="this.style.display='none';">
+        
+        </figure>
+        <figure class="shot mint" onclick="openLb(this)">
+          <img src="поли 3.jpg" alt="Политехник 3" onerror="this.style.display='none';">
+         
+        </figure>
+        <figure class="shot mint" onclick="openLb(this)">
+          <img src="поли 4.jpg" alt="Политехник 4" onerror="this.style.display='none';">
+         
+        </figure>
+      </div>
+
+      <div class="next-link">
+        <button class="btn" onclick="goTo('gorizont')">← Глава 1: Лагерь «Горизонт»</button>
+        <button class="btn" onclick="goTo('home')">Вернуться на главную →</button>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <div class="hearts">🌸 🌿 🌼</div>
+      <p>Лабораторная работа №1 · «Как я провел лето» · 2026</p>
+    </div>
+  </footer>
+
+</div>
+
+
+<!-- ============ ЛАЙТБОКС ============ -->
+<div class="lightbox" id="lb" onclick="closeLb(event)">
+  <button class="close" onclick="closeLb(event)" aria-label="Закрыть">✕</button>
+  <img id="lbImg" src="" alt="Увеличенное фото">
+</div>
+
+
+<script>
+  /* ============================================================
+     НАВИГАЦИЯ МЕЖДУ ЭКРАНАМИ
+     ============================================================ */
+  const SCREENS = ['home', 'gorizont', 'politehnik'];
+
+  function goTo(name){
+    // скрыть все
+    SCREENS.forEach(id => {
+      document.getElementById('screen-' + id).classList.remove('active');
+    });
+    // показать нужный
+    const target = document.getElementById('screen-' + name);
+    if (target){
+      target.classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'instant' in window ? 'instant' : 'auto' });
+    }
+    // синхронизировать hash в адресной строке
+    history.replaceState(null, '', name === 'home' ? '#' : '#' + name);
+  }
+
+  // поддержка прямых ссылок вида index.html#gorizont
+  window.addEventListener('load', () => {
+    const h = location.hash.replace('#', '');
+    if (h && SCREENS.includes(h)) goTo(h);
+  });
+
+  // кнопка "назад" браузера
+  window.addEventListener('hashchange', () => {
+    const h = location.hash.replace('#', '') || 'home';
+    if (SCREENS.includes(h)) goTo(h);
+  });
+
+  /* ============================================================
+     ЛАЙТБОКС
+     ============================================================ */
+  function openLb(fig){
+    const img = fig.querySelector('img');
+    if (!img || img.style.display === 'none' || !img.src) return;
+    document.getElementById('lbImg').src = img.src;
+    document.getElementById('lb').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLb(e){
+    if (e) e.stopPropagation();
+    document.getElementById('lb').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeLb();
+  });
+</script>
+
+</body>
+</html>
