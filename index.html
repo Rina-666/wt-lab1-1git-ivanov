@@ -8,9 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Manrope:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
-  /* ============================================================
-     БАЗА
-     ============================================================ */
+  
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root{
@@ -38,9 +36,7 @@
 
   .wrap{ width: min(1080px, 92vw); margin-inline: auto; }
 
-  /* ============================================================
-     ЖИВОЙ ФОН
-     ============================================================ */
+  
   .bg-aura{
     position: fixed;
     inset: -20%;
@@ -79,9 +75,7 @@
     100% { transform: translateY(110vh) translateX(-30px) rotate(360deg); opacity: 0; }
   }
 
-  /* ============================================================
-     ОБЩИЕ ТИПОГРАФИЧЕСКИЕ ЭЛЕМЕНТЫ
-     ============================================================ */
+  
   .badge{
     display: inline-block;
     font-size: .78rem;
@@ -123,15 +117,11 @@
     to  { opacity:1 }
   }
 
-  /* ============================================================
-     ЭКРАНЫ (SPA)
-     ============================================================ */
+  
   .screen{ display: none; }
   .screen.active{ display: block; animation: fade .4s both; }
 
-  /* ============================================================
-     ГЛАВНАЯ: ШАПКА
-     ============================================================ */
+
   header.hero-main{
     min-height: 92vh;
     display: grid;
@@ -177,9 +167,7 @@
 
   section.block{ padding: 70px 0; }
 
-  /* ============================================================
-     ВСТУПЛЕНИЕ (ФОТО + ТЕКСТ)
-     ============================================================ */
+  
   .intro{
     display: grid;
     grid-template-columns: 1fr 1.15fr;
@@ -222,9 +210,7 @@
   .intro-text p{ font-weight: 300; color: #5c4d64; }
   .intro-text strong{ font-weight: 600; color: var(--ink); }
 
-  /* ============================================================
-     КАРТОЧКИ-КНОПКИ
-     ============================================================ */
+
   .cards{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
@@ -303,9 +289,7 @@
   .card-cta .arrow{ transition: transform .4s cubic-bezier(.2,.8,.2,1); }
   .card:hover .card-cta .arrow{ transform: translateX(6px); }
 
-  /* ============================================================
-     ЦИТАТА
-     ============================================================ */
+  
   .quote{ text-align: center; padding: 80px 0; }
   .quote blockquote{
     font-family: 'Cormorant Garamond', serif;
@@ -327,9 +311,7 @@
     margin: 18px auto;
   }
 
-  /* ============================================================
-     ПОДВАЛ
-     ============================================================ */
+
   footer{
     text-align: center;
     padding: 60px 0 70px;
@@ -339,9 +321,7 @@
   }
   footer .hearts{ font-size: 1.2rem; letter-spacing: .4em; margin-bottom: 14px; }
 
-  /* ============================================================
-     ВНУТРЕННИЕ СТРАНИЦЫ
-     ============================================================ */
+  
   .topbar{
     position: sticky; top: 0; z-index: 20;
     backdrop-filter: blur(14px);
@@ -428,9 +408,7 @@
   }
   .fact .value{ font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 600; }
 
-  /* ============================================================
-     ГАЛЕРЕЯ
-     ============================================================ */
+
   .gallery{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
@@ -467,9 +445,7 @@
   }
   .shot:hover .cap{ opacity: 1; transform: translateY(0); }
 
-  /* ============================================================
-     НАВИГАЦИЯ МЕЖДУ ГЛАВАМИ
-     ============================================================ */
+ 
   .next-link{
     display: flex; justify-content: space-between; align-items: center;
     gap: 18px; flex-wrap: wrap;
@@ -489,9 +465,7 @@
   }
 
 
-  /* ============================================================
-     ЛАЙТБОКС
-     ============================================================ */
+
   .lightbox{
     position: fixed; inset: 0; z-index: 100;
     display: none; place-items: center;
@@ -518,9 +492,7 @@
   }
   .lightbox .close:hover{ transform: rotate(90deg) scale(1.08); }
 
-  /* ============================================================
-     АДАПТИВ
-     ============================================================ */
+  
   @media (max-width: 760px){
     .intro{ grid-template-columns: 1fr; }
     .photo-frame{ transform: none; max-width: 420px; margin-inline: auto; }
@@ -539,7 +511,7 @@
   }
 
 
-  /* ---- 1. Переменные Bootstrap под нашу палитру ---- */
+
   :root{
     --bs-primary:        #b98fe0;
     --bs-primary-rgb:    185, 143, 224;
@@ -555,14 +527,14 @@
     --bs-border-radius-sm: 999px;
   }
 
-  /* ---- 2. Bootstrap container согласован с .wrap ---- */
+  
   .container,
   .container-fluid{
     --bs-gutter-x: 1.5rem;
     --bs-gutter-y: 1.5rem;
   }
 
-  /* ---- 3. Кнопки Bootstrap в стиле сайта ---- */
+ 
   .btn{
     font-family: 'Manrope', system-ui, sans-serif;
     border-radius: 999px;
@@ -629,7 +601,7 @@
     box-shadow: var(--shadow);
   }
 
-  /* ---- 4. Bootstrap card в стиле сайта (стекло) ---- */
+  
   .card{
     --bs-card-bg: rgba(255,255,255,.6);
     --bs-card-border-color: rgba(255,255,255,.9);
@@ -648,7 +620,7 @@
   }
   .card-text{ font-weight: 300; color: #5c4d64; }
 
-  /* ---- 5. Bootstrap badge в стиле сайта ---- */
+
   .badge{
     font-family: 'Manrope', system-ui, sans-serif;
     font-weight: 600;
@@ -656,7 +628,7 @@
     text-transform: uppercase;
   }
 
-  /* ---- 6. Bootstrap navbar в стиле сайта ---- */
+
   .navbar{
     --bs-navbar-padding-y: 0;
     --bs-navbar-color: var(--ink);
@@ -668,7 +640,7 @@
   }
   .navbar-text{ color: var(--ink-soft); }
 
-  /* ---- 7. Bootstrap img-fluid согласован с .photo-frame ---- */
+  
   .img-fluid{
     max-width: 100%;
     height: auto;
@@ -680,51 +652,57 @@
     object-fit: cover;
   }
 
-  /* ---- 8. Утилиты Bootstrap: подгоняем под палитру ---- */
+  
   .text-muted{ color: var(--ink-soft) !important; }
   .bg-white{ background-color: rgba(255,255,255,.75) !important; }
   .bg-opacity-75{ --bs-bg-opacity: .75; }
   .rounded-pill{ border-radius: 999px !important; }
   .shadow-sm{ box-shadow: var(--shadow) !important; }
 
-  /* ---- 9. Сетка Bootstrap: страховка на мобильных ---- */
+  
   @media (max-width: 760px){
     .row{ --bs-gutter-x: 1rem; }
     .col-6{ flex: 0 0 auto; width: 50%; }
   }
 
-  /* ---- 10. Bootstrap Icons: цвет под палитру ---- */
+  
   .bi{ color: inherit; }
-    /* ============================================================
-     ГЛОБАЛЬНАЯ ШАПКА САЙТА (версия main)
-     ============================================================ */
-  .topbar-global{
+  
+  .site-nav{
     position: sticky; top: 0; z-index: 50;
-    background: linear-gradient(90deg, #ffe8d6, #ffd6e8);
+    background: rgba(255,255,255,.7);
+    backdrop-filter: blur(14px);
     border-bottom: 1px solid rgba(255,255,255,.9);
+    box-shadow: 0 8px 24px -18px rgba(180,130,190,.6);
   }
-  .topbar-global-inner{
+  .site-nav-inner{
     display: flex; align-items: center; justify-content: space-between;
-    padding: 12px 0;
+    padding: 14px 0;
   }
-  .topbar-global .back{
-    display: inline-flex; align-items: center; gap: 8px;
-    text-decoration: none; color: var(--ink);
-    font-family: inherit; font-weight: 600; font-size: .9rem;
-    padding: 9px 18px; border-radius: 999px;
-    background: rgba(255,255,255,.75);
-    border: 1px solid rgba(255,255,255,1);
-    cursor: pointer;
+  .site-logo{
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem; font-weight: 600;
+    color: var(--ink); text-decoration: none;
   }
-  .topbar-global .crumb{
-    font-size: .82rem; letter-spacing: .18em;
-    text-transform: uppercase; color: var(--ink-soft); font-weight: 600;
+  .site-menu{
+    display: flex; gap: 22px; list-style: none;
+    margin: 0; padding: 0;
+  }
+  .site-menu a{
+    color: var(--ink); text-decoration: none;
+    font-weight: 600; font-size: .92rem;
+    transition: color .3s;
+  }
+  .site-menu a:hover{ color: #b98fe0; }
+  @media (max-width: 760px){
+    .site-menu{ gap: 12px; font-size: .85rem; }
+    .site-logo{ font-size: 1.15rem; }
   }
 </style>
 </head>
 <body>
 
-<!-- ============ ЖИВОЙ ФОН И ЛЕПЕСТКИ ============ -->
+
 <div class="bg-aura"></div>
 <div class="petal" style="left:6%;  animation-duration:16s; animation-delay:0s;">🌸</div>
 <div class="petal" style="left:22%; animation-duration:21s; animation-delay:3s;">🌷</div>
@@ -734,19 +712,22 @@
 <div class="petal" style="left:88%; animation-duration:22s; animation-delay:4.5s;">🌺</div>
 
 
-<!-- ============================================================
-     ЭКРАН 1: ГЛАВНАЯ
-     ============================================================ -->
+
 <div class="screen active" id="screen-home">
 
-   <!-- ГЛОБАЛЬНАЯ ШАПКА САЙТА (версия main) -->
-  <div class="topbar-global">
-    <div class="wrap topbar-global-inner">
-      <button class="back" onclick="goTo('home')">← На главную</button>
-      <span class="crumb">Лето 2026 · Дневник</span>
+  
+  <nav class="site-nav">
+    <div class="wrap site-nav-inner">
+      <a href="#" class="site-logo" onclick="goTo('home'); return false;">🌸 Моё лето</a>
+      <ul class="site-menu">
+        <li><a href="#home" onclick="goTo('home'); return false;">Главная</a></li>
+        <li><a href="#gorizont" onclick="goTo('gorizont'); return false;">Лагерь «Горизонт»</a></li>
+        <li><a href="#politehnik" onclick="goTo('politehnik'); return false;">«Политехник»</a></li>
+      </ul>
     </div>
-  </div>
+  </nav>
 
+  <header class="hero-main">
   <header class="hero-main">
     <div class="wrap">
       <span class="badge">Лето 2026 · My life</span>
@@ -850,9 +831,7 @@
 </div>
 
 
-<!-- ============================================================
-     ЭКРАН 2: ЛАГЕРЬ «ГОРИЗОНТ»
-     ============================================================ -->
+
 <div class="screen" id="screen-gorizont">
 
   <div class="topbar">
@@ -939,9 +918,7 @@
 </div>
 
 
-<!-- ============================================================
-     ЭКРАН 3: САНАТОРИЙ «ПОЛИТЕХНИК»
-     ============================================================ -->
+
 <div class="screen" id="screen-politehnik">
 
   <div class="topbar">
@@ -1029,7 +1006,7 @@
 </div>
 
 
-<!-- ============ ЛАЙТБОКС ============ -->
+
 <div class="lightbox" id="lb" onclick="closeLb(event)">
   <button class="close" onclick="closeLb(event)" aria-label="Закрыть">✕</button>
   <img id="lbImg" src="" alt="Увеличенное фото">
@@ -1037,9 +1014,7 @@
 
 
 <script>
-  /* ============================================================
-     НАВИГАЦИЯ МЕЖДУ ЭКРАНАМИ
-     ============================================================ */
+ 
   const SCREENS = ['home', 'gorizont', 'politehnik'];
 
   function goTo(name){
@@ -1069,9 +1044,7 @@
     if (SCREENS.includes(h)) goTo(h);
   });
 
-  /* ============================================================
-     ЛАЙТБОКС
-     ============================================================ */
+ 
   function openLb(fig){
     const img = fig.querySelector('img');
     if (!img || img.style.display === 'none' || !img.src) return;
