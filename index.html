@@ -695,6 +695,31 @@
 
   /* ---- 10. Bootstrap Icons: цвет под палитру ---- */
   .bi{ color: inherit; }
+    /* ============================================================
+     ГЛОБАЛЬНАЯ ШАПКА САЙТА (версия main)
+     ============================================================ */
+  .topbar-global{
+    position: sticky; top: 0; z-index: 50;
+    background: linear-gradient(90deg, #ffe8d6, #ffd6e8);
+    border-bottom: 1px solid rgba(255,255,255,.9);
+  }
+  .topbar-global-inner{
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 12px 0;
+  }
+  .topbar-global .back{
+    display: inline-flex; align-items: center; gap: 8px;
+    text-decoration: none; color: var(--ink);
+    font-family: inherit; font-weight: 600; font-size: .9rem;
+    padding: 9px 18px; border-radius: 999px;
+    background: rgba(255,255,255,.75);
+    border: 1px solid rgba(255,255,255,1);
+    cursor: pointer;
+  }
+  .topbar-global .crumb{
+    font-size: .82rem; letter-spacing: .18em;
+    text-transform: uppercase; color: var(--ink-soft); font-weight: 600;
+  }
 </style>
 </head>
 <body>
@@ -713,6 +738,14 @@
      ЭКРАН 1: ГЛАВНАЯ
      ============================================================ -->
 <div class="screen active" id="screen-home">
+
+   <!-- ГЛОБАЛЬНАЯ ШАПКА САЙТА (версия main) -->
+  <div class="topbar-global">
+    <div class="wrap topbar-global-inner">
+      <button class="back" onclick="goTo('home')">← На главную</button>
+      <span class="crumb">Лето 2026 · Дневник</span>
+    </div>
+  </div>
 
   <header class="hero-main">
     <div class="wrap">
